@@ -64,7 +64,7 @@
 <body>
 <div class="wrap">
   <h1>Privacy Policy</h1>
-  <div class="meta">MFBP · Last updated September 24, 2026</div>
+  <div class="meta">MFBP · Last updated September 27, 2026</div>
 
   <div class="callout">
     <p><strong>The short version:</strong> MFBP doesn't run any servers and doesn't collect your data. There's no account and no MFBP backend. By default everything stays on your device. If you turn on iCloud sync, Apple Health, or share a workout, your data moves only between Apple's services, your own devices, and the people you choose to send it to. It never passes through us.</p>
@@ -79,10 +79,10 @@
 
   <h2>iCloud sync (optional)</h2>
   <p>If you turn on iCloud sync in Settings, MFBP uses Apple's CloudKit to sync your exercises, workouts, history, and progress across your own devices. This data is stored in your private iCloud account, encrypted and managed by Apple under your Apple ID. MFBP has no access to it, and it is never sent to us or to any third party. Sync is off by default and takes effect the next time you launch the app after turning it on.</p>
-  <p>iCloud sync never includes Health data: not what MFBP reads from Apple Health, and not the heart rate, calories, or effort ratings your Apple Watch measures during a workout. It also doesn't include your Fuel goals.</p>
+  <p>iCloud sync never includes Health data: not what MFBP reads from Apple Health, and not the heart rate, calories, or effort ratings your Apple Watch measures during a workout, and not the workouts from other apps that MFBP counts toward your streak. It also doesn't include your Fuel goals.</p>
 
   <h2>Apple Health (optional)</h2>
-  <p>MFBP works with Apple Health in three separate ways. Each has its own setting, and each only works after you grant permission in Apple's Health permission screen. You can review or revoke that permission at any time in the Health app or in Settings &gt; Health &gt; Data Access &amp; Devices.</p>
+  <p>MFBP works with Apple Health in four separate ways. Each has its own setting, and each only works after you grant permission in Apple's Health permission screen. You can review or revoke that permission at any time in the Health app or in Settings &gt; Health &gt; Data Access &amp; Devices.</p>
   <p><strong>Saving workouts to Health.</strong> If you turn on Sync to Apple Health, MFBP writes each completed workout to Health as a workout entry, tagged as strength, cardio, or cross training based on the exercises involved. A workout you track on Apple Watch is saved by your watch instead, and also includes the heart rate and calories your watch measured, the exercises as separate segments, and your effort rating if you give one.</p>
   <p><strong>Tracking workouts on Apple Watch (MFBP Pro).</strong> If you choose to track a workout on your Apple Watch, the MFBP Watch app runs a workout session that reads your heart rate and active and resting energy burned while you train. MFBP also reads your date of birth from Health to work out heart rate zones. It shows these numbers on your watch and iPhone during the workout and in a recap afterwards. MFBP keeps a small summary of each watch-tracked workout (average and maximum heart rate, calories, time in each heart rate zone, and your effort rating) with that workout in your history. The summary is stored only on your iPhone, in storage that is never synced to iCloud, and it's deleted when you delete the workout from your history.</p>
   <p><strong>Reading nutrition and activity (Fuel).</strong> If you turn on Fuel (Nutrition on Today), MFBP reads the following from Health:</p>
@@ -92,7 +92,8 @@
     <li>body weight</li>
   </ul>
   <p>MFBP uses this only to show your daily calories and macros, what your workouts burned, and your trends, and to suggest calorie and protein goals. This data usually comes from other apps and devices you've connected to Health, such as a food-tracking app or an Apple Watch. MFBP has no connection to those apps and never contacts them.</p>
-  <p>Health data MFBP reads is processed on your device. It is not sent to MFBP, sold, shared with anyone, used for advertising or marketing, or given to the on-device AI features. MFBP never copies it into iCloud. The only copies it keeps are on your device: the summary of each watch-tracked workout described above, and a small summary of today's numbers described under Widgets below. MFBP never writes nutrition data to Health, and the only energy data it writes is what your Apple Watch measured during a workout you tracked with it.</p>
+  <p><strong>Counting workouts from other apps.</strong> If you turn on Workouts from Apple Health, MFBP reads the workouts other apps and devices save to Health (for example Apple Watch's Workout app or a class from another fitness app), along with the active energy each one burned. MFBP keeps a small record of each one on your iPhone (its type, start and end time, the name of the app that recorded it, and the calories burned), so it can count toward your streak, appear in your streak calendar, and show in Fuel's breakdown of what you burned. Workouts shorter than 10 minutes and workouts MFBP saved itself are skipped. These records are stored only on your iPhone, in storage that is never synced to iCloud. They follow Health: a workout you delete in Health is removed from MFBP, and turning the setting off deletes all of them.</p>
+  <p>Health data MFBP reads is processed on your device. It is not sent to MFBP, sold, shared with anyone, used for advertising or marketing, or given to the on-device AI features. MFBP never copies it into iCloud. The only copies it keeps are on your device: the summary of each watch-tracked workout described above, the record of each workout from another app described above, and a small summary of today's numbers described under Widgets below. MFBP never writes nutrition data to Health, and the only energy data it writes is what your Apple Watch measured during a workout you tracked with it.</p>
 
   <h2>Widgets</h2>
   <p>If you add the Fuel widget, MFBP saves a small summary of today's fuel on your device, in a storage area shared only with MFBP's own widget. The summary holds calories and macros against your goals, and when they were last updated. It lets the widget display without reading Health itself. The summary is replaced as the day's numbers change, and it's removed when you turn Fuel off.</p>
@@ -116,7 +117,7 @@
   <p>MFBP does not use any analytics, advertising, or tracking software. We don't know how many times you've opened the app, what you've logged, or who you are. Aggregate, anonymized install and crash statistics may be visible to us only through Apple's standard App Store Connect reporting. Apple provides these to all developers, and they're never tied to your identity.</p>
 
   <h2>Third parties</h2>
-  <p>MFBP does not integrate with or share data with any third-party service. The only exceptions are the optional Apple services described above (iCloud/CloudKit, Apple Health, and Messages), which operate under your own Apple ID and are never routed through MFBP. Fuel can show nutrition that other apps have saved to Apple Health, but MFBP reads it from Health only and has no connection to those apps.</p>
+  <p>MFBP does not integrate with or share data with any third-party service. The only exceptions are the optional Apple services described above (iCloud/CloudKit, Apple Health, and Messages), which operate under your own Apple ID and are never routed through MFBP. Fuel can show nutrition, and your streak can count workouts, that other apps have saved to Apple Health, but MFBP reads them from Health only and has no connection to those apps.</p>
 
   <h2>Children's privacy</h2>
   <p>MFBP does not knowingly collect data from anyone, including children under 13, because it does not collect data from anyone, regardless of age.</p>
