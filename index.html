@@ -3,49 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MFBP</title>
+<title>MFBP — Move Fast, Be Patient</title>
+<meta name="description" content="Consistency over intensity. MFBP brings your training, fuel and progress together in one iPhone and Apple Watch app. No fad diets, no crash workouts.">
+<meta name="apple-itunes-app" content="app-id=6806676902">
+<meta property="og:title" content="MFBP — Move Fast, Be Patient">
+<meta property="og:description" content="Consistency over intensity. Training, fuel and progress in one place.">
+<meta property="og:image" content="https://mfbp.io/img/consistency.jpg">
+<link rel="icon" href="/img/icon.png">
+<link rel="apple-touch-icon" href="/img/icon.png">
 <style>
   :root {
     --bg: #0B1220;
-    --gold: #D4A94F;
-    --lime: #C4E15A;
+    --surface: #131B2E;
+    --border: #26324D;
+    --text: #EDEFF4;
     --text-dim: #9AA5B8;
+    --gold: #D4A94F;
+    --gold-bright: #F0B85C;
+    --lime: #C4E15A;
   }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: var(--bg);
-    color: #EDEFF4;
+    background: radial-gradient(ellipse at 50% 0%, #1B2A47 0%, var(--bg) 60%) no-repeat, var(--bg);
+    color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    text-align: center;
-    padding: 24px;
+    line-height: 1.6;
+  }
+  a { color: var(--gold); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero { text-align: center; padding: 72px 0 40px; }
+  .hero img.icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 12px 40px rgba(240,184,92,.25); }
+  .eyebrow {
+    display: inline-block; margin: 28px 0 14px; padding: 6px 16px; border-radius: 999px;
+    background: var(--lime); color: #1A2008; font-weight: 700; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase;
   }
   h1 {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    color: var(--gold);
-    margin: 0;
+    margin: 0; font-size: clamp(2.6rem, 9vw, 4.6rem); line-height: 1.02; font-weight: 900;
+    letter-spacing: -0.01em; text-transform: uppercase;
   }
-  .tagline {
-    color: var(--lime);
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin: 8px 0 32px;
+  h1 span { display: block; color: var(--gold-bright); }
+  .lede { max-width: 38em; margin: 22px auto 0; color: #D7DAE3; font-size: 1.12rem; }
+  .cta {
+    display: inline-block; margin-top: 30px; padding: 14px 28px; border-radius: 14px;
+    background: var(--gold); color: #1A1406; font-weight: 700; text-decoration: none; font-size: 1.05rem;
   }
-  p { color: var(--text-dim); max-width: 40ch; }
-  a { color: var(--gold); }
+  .cta:hover { background: var(--gold-bright); }
+  .fine { color: var(--text-dim); font-size: .9rem; margin-top: 12px; }
+
+  .shots {
+    display: flex; gap: 16px; overflow-x: auto; padding: 24px 4px 32px; scroll-snap-type: x mandatory;
+    justify-content: safe center;
+  }
+  .shots img {
+    flex: 0 0 auto; width: 200px; height: auto; border-radius: 18px; scroll-snap-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.45); border: 1px solid var(--border);
+  }
+
+  section { padding: 40px 0; }
+  h2 { font-size: 1.6rem; margin: 0 0 10px; text-align: center; }
+  .sub { text-align: center; color: var(--text-dim); max-width: 36em; margin: 0 auto 32px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+  .card h3 { margin: 0 0 6px; color: var(--gold); font-size: 1.05rem; }
+  .card p { margin: 0; color: #D7DAE3; font-size: .98rem; }
+
+  .nots { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 8px; }
+  .nots span {
+    border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; color: var(--text-dim); font-size: .95rem;
+  }
+  .nots span b { color: var(--text); font-weight: 600; }
+
+  .closing { text-align: center; padding: 48px 0 24px; }
+  .closing p { font-size: 1.3rem; font-weight: 800; text-transform: uppercase; margin: 0; }
+  .closing p span { color: var(--gold-bright); }
+
+  footer {
+    border-top: 1px solid var(--border); margin-top: 40px; padding: 24px 0 48px;
+    color: var(--text-dim); font-size: .9rem; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: center;
+  }
+  footer a { color: var(--text-dim); }
 </style>
 </head>
 <body>
-  <h1>MFBP</h1>
-  <div class="tagline">Move Fast, Be Patient</div>
-  <p>Launching soon on the App Store. In the meantime, see the <a href="/privacy">privacy policy</a>.</p>
+<div class="wrap">
+  <header class="hero">
+    <img class="icon" src="/img/icon.png" alt="MFBP app icon">
+    <div><span class="eyebrow">Move Fast · Be Patient</span></div>
+    <h1>Consistency <span>over intensity.</span></h1>
+    <p class="lede">Lasting health isn't built on intensity. It's built on showing up: training, fuel and the mindset to keep going. MFBP isn't another exercise tracker. It's a personal companion for the long run, on your terms, with a clear view of your goals and your progress.</p>
+    <a class="cta" href="https://apps.apple.com/app/id6806676902">Get MFBP on the App Store</a>
+    <div class="fine">For iPhone and Apple Watch. Free to use, with an optional Pro subscription.</div>
+  </header>
+
+  <div class="shots" aria-label="App screenshots">
+    <img src="/img/consistency.jpg" alt="Home screen with today's fuel and a workout on Apple Watch" loading="lazy">
+    <img src="/img/demos.jpg" alt="Animated 3D demonstration of a barbell squat" loading="lazy">
+    <img src="/img/cardio.jpg" alt="A run in progress with GPS distance and pace" loading="lazy">
+    <img src="/img/fuel.jpg" alt="Fuel screen with calories, protein and energy burned" loading="lazy">
+    <img src="/img/progress.jpg" alt="Progress screen with volume and a strength curve" loading="lazy">
+  </div>
+
+  <section>
+    <h2>A mindset, not a program</h2>
+    <p class="sub">Train, fuel and recover in one place, the way you already work.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Train your way</h3>
+        <p>Build every exercise and routine yourself, or start from a library of hundreds. Over 500 exercises show an animated 3D demo, with coaching for bar path, tempo and breathing.</p>
+      </div>
+      <div class="card">
+        <h3>Move at your pace</h3>
+        <p>Start a run, walk or ride in one tap. The clock counts up, with GPS distance, pace and a map of your route. Track heart rate and calories on Apple Watch.</p>
+      </div>
+      <div class="card">
+        <h3>Fuel the long game</h3>
+        <p>See today's calories and protein from Apple Health next to your training, with goals from your body weight. No meal plans, no fad diets.</p>
+      </div>
+      <div class="card">
+        <h3>See it add up</h3>
+        <p>Streaks, a year view of every day you showed up, strength curves and personal records. Every set and rep is logged as you go.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What MFBP isn't</h2>
+    <div class="nots">
+      <span><b>No</b> fad diets</span>
+      <span><b>No</b> crash workouts</span>
+      <span><b>No</b> accounts</span>
+      <span><b>No</b> ads or tracking</span>
+      <span><b>No</b> one else's idea of how you should train</span>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p>Move fast. <span>Be patient.</span></p>
+    <a class="cta" href="https://apps.apple.com/app/id6806676902">Get MFBP on the App Store</a>
+  </div>
+
+  <footer>
+    <span>MFBP — Move Fast, Be Patient</span>
+    <a href="/support">Support</a>
+    <a href="/privacy">Privacy Policy</a>
+  </footer>
+</div>
 </body>
 </html>
