@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MFBP — Move Fast, Be Patient</title>
-<meta name="description" content="Consistency over intensity. MFBP brings your training, fuel and progress together in one iPhone and Apple Watch app. No fad diets, no crash workouts.">
+<meta name="description" content="Lasting health is all three: how you train, how you fuel and how you feel. MFBP brings Train, Fuel and Mind together in one iPhone and Apple Watch app. No fad diets, no crash workouts.">
 <meta name="apple-itunes-app" content="app-id=6806676902">
 <meta property="og:title" content="MFBP — Move Fast, Be Patient">
-<meta property="og:description" content="Consistency over intensity. Training, fuel and progress in one place.">
-<meta property="og:image" content="https://mfbp.io/img/consistency.jpg">
+<meta property="og:description" content="Lasting health is all three. Train, Fuel and Mind, together in one place.">
+<meta property="og:image" content="https://mfbp.io/img/whole-health.jpg">
 <link rel="icon" href="/img/icon.png">
 <link rel="apple-touch-icon" href="/img/icon.png">
 <style>
@@ -21,6 +21,8 @@
     --gold: #D4A94F;
     --gold-bright: #F0B85C;
     --lime: #C4E15A;
+    --fuel: #4FD1A5;
+    --mind: #F2A6C8;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -70,6 +72,25 @@
   .card h3 { margin: 0 0 6px; color: var(--gold); font-size: 1.05rem; }
   .card p { margin: 0; color: #D7DAE3; font-size: .98rem; }
 
+  .pillars .card { border-top: 4px solid var(--gold-bright); }
+  .pillars .card.fuel { border-top-color: var(--fuel); }
+  .pillars .card.fuel h3 { color: var(--fuel); }
+  .pillars .card.mind { border-top-color: var(--mind); }
+  .pillars .card.mind h3 { color: var(--mind); }
+  .pillars .card h3 { font-size: 1.25rem; text-transform: uppercase; letter-spacing: .04em; }
+  .pillars .card ul { margin: 10px 0 0; padding-left: 1.1em; color: #D7DAE3; font-size: .96rem; }
+  .pillars .card li { margin: 4px 0; }
+
+  .mind-section h2 .tag {
+    display: inline-block; vertical-align: middle; margin-left: 8px; padding: 3px 10px; border-radius: 999px;
+    background: var(--mind); color: #2A1220; font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  }
+  .mind-section .card h3 { color: var(--mind); }
+  .note {
+    max-width: 44em; margin: 24px auto 0; padding: 14px 18px; border-radius: 12px;
+    border: 1px solid var(--border); color: var(--text-dim); font-size: .92rem; text-align: center;
+  }
+
   .nots { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 8px; }
   .nots span {
     border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; color: var(--text-dim); font-size: .95rem;
@@ -92,39 +113,96 @@
   <header class="hero">
     <img class="icon" src="/img/icon.png" alt="MFBP app icon">
     <div><span class="eyebrow">Move Fast · Be Patient</span></div>
-    <h1>Consistency <span>over intensity.</span></h1>
-    <p class="lede">Lasting health isn't built on intensity. It's built on showing up: training, fuel and the mindset to keep going. MFBP isn't another exercise tracker. It's a personal companion for the long run, on your terms, with a clear view of your goals and your progress.</p>
+    <h1>Lasting health <span>is all three.</span></h1>
+    <p class="lede">It isn't one thing. It's how you train, how you fuel and how you feel, working together day after day. MFBP brings all three into one calm routine: Train, Fuel and Mind side by side, built around your goals and the targets you set.</p>
     <a class="cta" href="https://apps.apple.com/app/id6806676902">Get MFBP on the App Store</a>
     <div class="fine">For iPhone and Apple Watch. Free to use, with an optional Pro subscription.</div>
   </header>
 
   <div class="shots" aria-label="App screenshots">
-    <img src="/img/consistency.jpg" alt="Home screen with today's fuel and a workout on Apple Watch" loading="lazy">
-    <img src="/img/demos.jpg" alt="Animated 3D demonstration of a barbell squat" loading="lazy">
-    <img src="/img/cardio.jpg" alt="A run in progress with GPS distance and pace" loading="lazy">
+    <img src="/img/whole-health.jpg" alt="Today with Train, Fuel and Mind rings, and the same rings on Apple Watch" loading="lazy">
+    <img src="/img/mind.jpg" alt="Mind check-in with mood and tags, and habits against your targets" loading="lazy">
+    <img src="/img/breathe.jpg" alt="A guided box breathing session" loading="lazy">
+    <img src="/img/sleep.jpg" alt="Last night's sleep against your target" loading="lazy">
+    <img src="/img/demos.jpg" alt="Animated 3D demonstration of a deadlift" loading="lazy">
+    <img src="/img/workouts.jpg" alt="Workouts, each drawn as the shape of its sets" loading="lazy">
     <img src="/img/fuel.jpg" alt="Fuel screen with calories, protein and energy burned" loading="lazy">
-    <img src="/img/progress.jpg" alt="Progress screen with volume and a strength curve" loading="lazy">
+    <img src="/img/connected.jpg" alt="Check-ins next to training days in Progress" loading="lazy">
   </div>
 
   <section>
-    <h2>A mindset, not a program</h2>
-    <p class="sub">Train, fuel and recover in one place, the way you already work.</p>
+    <h2>Three parts of lasting health</h2>
+    <p class="sub">Progress in one supports the others. MFBP keeps them in one place, on your terms.</p>
+    <div class="grid pillars">
+      <div class="card">
+        <h3>Train</h3>
+        <p>Build any routine your way, or start from a library of hundreds of exercises.</p>
+        <ul>
+          <li>Animated 3D demos for over 500 exercises</li>
+          <li>Runs, walks and rides with GPS and pace</li>
+          <li>Recovery days that count, because rest is part of training</li>
+        </ul>
+      </div>
+      <div class="card fuel">
+        <h3>Fuel</h3>
+        <p>Today's calories and protein from Apple Health, next to how you train.</p>
+        <ul>
+          <li>Goals from your body weight</li>
+          <li>Works with any food app that shares with Health</li>
+          <li>No meal plans, no fad diets</li>
+        </ul>
+      </div>
+      <div class="card mind">
+        <h3>Mind</h3>
+        <p>How you feel, how you sleep and the habits you choose, at your own pace.</p>
+        <ul>
+          <li>One-tap check-ins</li>
+          <li>Sleep, breathing and mindful minutes</li>
+          <li>Habits with targets you set</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mind-section">
+    <h2>Meet Mind <span class="tag">New</span></h2>
+    <p class="sub">A calmer way to look after the part of health a workout log misses. All of Mind is free.</p>
     <div class="grid">
       <div class="card">
-        <h3>Train your way</h3>
-        <p>Build every exercise and routine yourself, or start from a library of hundreds. Over 500 exercises show an animated 3D demo, with coaching for bar path, tempo and breathing.</p>
+        <h3>Check in</h3>
+        <p>Tap how you're feeling and, if you like, what shaped your day. Over time, see your check-ins next to your training (Pro).</p>
       </div>
       <div class="card">
-        <h3>Move at your pace</h3>
-        <p>Start a run, walk or ride in one tap. The clock counts up, with GPS distance, pace and a map of your route. Track heart rate and calories on Apple Watch.</p>
+        <h3>Habits you set</h3>
+        <p>Alcohol-free days, a screens-off wind-down, sleep and mindful minutes, each against a target you choose. Habits count by the week, so a missed day never breaks your week.</p>
       </div>
       <div class="card">
-        <h3>Fuel the long game</h3>
-        <p>See today's calories and protein from Apple Health next to your training, with goals from your body weight. No meal plans, no fad diets.</p>
+        <h3>Rest is part of the plan</h3>
+        <p>Last night's sleep from Apple Health, or log it yourself if you don't wear a tracker. After a run of training days, Today suggests a rest day, and a rest day you plan keeps your streak going.</p>
+      </div>
+      <div class="card">
+        <h3>Breathe and learn</h3>
+        <p>Guided box breathing, the physiological sigh and 4-7-8, saved to Apple Health as mindful minutes. Short guides on stress, sleep, light and screens, rest and alcohol, each with its sources.</p>
+      </div>
+    </div>
+    <p class="note">Everything you log in Mind stays on your iPhone and is never synced to iCloud. MFBP offers general wellness guidance and isn't a substitute for professional medical or mental health care. Support &amp; Resources is always one tap away in the app.</p>
+  </section>
+
+  <section>
+    <h2>One view of your day</h2>
+    <p class="sub">Your three rings and your streak, with one suggestion for what's next.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Today at a glance</h3>
+        <p>Train, Fuel and Mind rings beside your streak, and an Up Next pick that weighs your week. Turn rings and cards on or off and put them in the order you like.</p>
+      </div>
+      <div class="card">
+        <h3>On your wrist</h3>
+        <p>Track workouts on Apple Watch with live heart rate and calories, and see your three rings between workouts and right on your watch face (Pro).</p>
       </div>
       <div class="card">
         <h3>See it add up</h3>
-        <p>Streaks, a year view of every day you showed up, strength curves and personal records. Every set and rep is logged as you go.</p>
+        <p>A streak calendar and a year view of every day you showed up, strength curves and personal records. Every set and rep is logged as you go.</p>
       </div>
     </div>
   </section>
@@ -134,9 +212,10 @@
     <div class="nots">
       <span><b>No</b> fad diets</span>
       <span><b>No</b> crash workouts</span>
+      <span><b>No</b> guilt over a missed day</span>
       <span><b>No</b> accounts</span>
       <span><b>No</b> ads or tracking</span>
-      <span><b>No</b> one else's idea of how you should train</span>
+      <span><b>No</b> one else's idea of how you should live</span>
     </div>
   </section>
 
