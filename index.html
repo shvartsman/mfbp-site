@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MFBP — Move Fast, Be Patient</title>
-<meta name="description" content="Consistency over intensity. Real goals take patience, so MFBP tracks what you build over weeks, months and years, not one day. Train, Fuel and Mind in one iPhone and Apple Watch app. No fad diets, no crash workouts.">
-<meta name="apple-itunes-app" content="app-id=6806676902">
-<meta property="og:title" content="MFBP — Move Fast, Be Patient">
-<meta property="og:description" content="Consistency over intensity. Think in years, not days.">
-<meta property="og:image" content="https://mfbp.io/img/consistency.jpg">
+<title>MFBP — Move Fast</title>
+<meta name="description" content="MFBP makes calm, private iPhone apps for the things worth keeping up with: your health, and your home. No accounts, no ads, no tracking.">
+<meta property="og:title" content="MFBP — Move Fast">
+<meta property="og:description" content="Calm, private iPhone apps for your health and your home.">
+<meta property="og:image" content="https://mfbp.io/img/icon.png">
 <link rel="icon" href="/img/icon.png">
 <link rel="apple-touch-icon" href="/img/icon.png">
 <style>
@@ -20,9 +19,7 @@
     --text-dim: #9AA5B8;
     --gold: #D4A94F;
     --gold-bright: #F0B85C;
-    --lime: #C4E15A;
-    --fuel: #4FD1A5;
-    --mind: #F2A6C8;
+    --teal: #2DB898;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -36,70 +33,36 @@
   a { color: var(--gold); }
   .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
-  header.hero { text-align: center; padding: 72px 0 40px; }
-  .hero img.icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 12px 40px rgba(240,184,92,.25); }
-  .eyebrow {
-    display: inline-block; margin: 28px 0 14px; padding: 6px 16px; border-radius: 999px;
-    background: var(--lime); color: #1A2008; font-weight: 700; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase;
-  }
+  header.hero { text-align: center; padding: 80px 0 48px; }
   h1 {
-    margin: 0; font-size: clamp(2.6rem, 9vw, 4.6rem); line-height: 1.02; font-weight: 900;
+    margin: 0; font-size: clamp(3rem, 12vw, 5.5rem); line-height: 1; font-weight: 900;
     letter-spacing: -0.01em; text-transform: uppercase;
   }
-  h1 span { display: block; color: var(--gold-bright); }
-  .lede { max-width: 38em; margin: 22px auto 0; color: #D7DAE3; font-size: 1.12rem; }
-  .cta {
-    display: inline-block; margin-top: 30px; padding: 14px 28px; border-radius: 14px;
-    background: var(--gold); color: #1A1406; font-weight: 700; text-decoration: none; font-size: 1.05rem;
-  }
-  .cta:hover { background: var(--gold-bright); }
-  .fine { color: var(--text-dim); font-size: .9rem; margin-top: 12px; }
+  h1 span { color: var(--gold-bright); }
+  .lede { max-width: 34em; margin: 22px auto 0; color: #D7DAE3; font-size: 1.15rem; }
 
-  .shots {
-    display: flex; gap: 16px; overflow-x: auto; padding: 24px 4px 32px; scroll-snap-type: x mandatory;
-    justify-content: safe center;
+  .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding-bottom: 32px; }
+  .app {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px;
+    border-top: 4px solid var(--accent); display: flex; flex-direction: column;
   }
-  .shots img {
-    flex: 0 0 auto; width: 200px; height: auto; border-radius: 18px; scroll-snap-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,.45); border: 1px solid var(--border);
+  .app.wellness { --accent: var(--gold-bright); }
+  .app.getitdone { --accent: var(--teal); }
+  .app .top { display: flex; gap: 16px; align-items: center; }
+  .app img { width: 72px; height: 72px; border-radius: 16px; flex: 0 0 auto; }
+  .app h2 { margin: 0; font-size: 1.35rem; }
+  .app .slogan { color: var(--accent); font-weight: 700; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+  .app p { color: #D7DAE3; margin: 18px 0 0; flex: 1; }
+  .app .links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+  .app .cta {
+    display: inline-block; padding: 11px 20px; border-radius: 12px; background: var(--accent); color: #0B1220;
+    font-weight: 700; text-decoration: none;
   }
+  .app .links a:not(.cta) { color: var(--text-dim); font-size: .95rem; }
 
-  section { padding: 40px 0; }
-  h2 { font-size: 1.6rem; margin: 0 0 10px; text-align: center; }
-  .sub { text-align: center; color: var(--text-dim); max-width: 36em; margin: 0 auto 32px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
-  .card h3 { margin: 0 0 6px; color: var(--gold); font-size: 1.05rem; }
-  .card p { margin: 0; color: #D7DAE3; font-size: .98rem; }
-
-  .pillars .card { border-top: 4px solid var(--gold-bright); }
-  .pillars .card.fuel { border-top-color: var(--fuel); }
-  .pillars .card.fuel h3 { color: var(--fuel); }
-  .pillars .card.mind { border-top-color: var(--mind); }
-  .pillars .card.mind h3 { color: var(--mind); }
-  .pillars .card h3 { font-size: 1.25rem; text-transform: uppercase; letter-spacing: .04em; }
-  .pillars .card ul { margin: 10px 0 0; padding-left: 1.1em; color: #D7DAE3; font-size: .96rem; }
-  .pillars .card li { margin: 4px 0; }
-
-  .mind-section h2 .tag {
-    display: inline-block; vertical-align: middle; margin-left: 8px; padding: 3px 10px; border-radius: 999px;
-    background: var(--mind); color: #2A1220; font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
-  }
-  .mind-section .card h3 { color: var(--mind); }
-  .note {
-    max-width: 44em; margin: 24px auto 0; padding: 14px 18px; border-radius: 12px;
-    border: 1px solid var(--border); color: var(--text-dim); font-size: .92rem; text-align: center;
-  }
-
-  .nots { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 8px; }
-  .nots span {
-    border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; color: var(--text-dim); font-size: .95rem;
-  }
+  .nots { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 24px 0 8px; }
+  .nots span { border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; color: var(--text-dim); font-size: .95rem; }
   .nots span b { color: var(--text); font-weight: 600; }
-
-  .closing { text-align: center; padding: 48px 0 24px; }
-  .closing p { font-size: 1.3rem; font-weight: 800; text-transform: uppercase; margin: 0; }
-  .closing p span { color: var(--gold-bright); }
 
   footer {
     border-top: 1px solid var(--border); margin-top: 40px; padding: 24px 0 48px;
@@ -111,139 +74,46 @@
 <body>
 <div class="wrap">
   <header class="hero">
-    <img class="icon" src="/img/icon.png" alt="MFBP app icon">
-    <div><span class="eyebrow">Move Fast · Be Patient</span></div>
-    <h1>Consistency <span>over intensity.</span></h1>
-    <p class="lede">Real goals take patience. Don't measure what you can do in a day. Measure what you build over weeks, months and years. MFBP keeps how you train, fuel and feel in one calm routine you can keep showing up for, built around your goals and the targets you set.</p>
-    <a class="cta" href="https://apps.apple.com/app/id6806676902">Get MFBP on the App Store</a>
-    <div class="fine">For iPhone and Apple Watch. Free to use, with an optional Pro subscription.</div>
+    <h1>Move <span>fast.</span></h1>
+    <p class="lede">MFBP makes calm, private iPhone apps for the things worth keeping up with, every day: your health, and your home.</p>
   </header>
 
-  <div class="shots" aria-label="App screenshots">
-    <img src="/img/consistency.jpg" alt="Today with Train, Fuel and Mind rings, and the same rings on Apple Watch" loading="lazy">
-    <img src="/img/long-game.jpg" alt="A year of training days on the streak calendar" loading="lazy">
-    <img src="/img/mind.jpg" alt="Mind check-in with mood and tags, and habits against your targets" loading="lazy">
-    <img src="/img/breathe.jpg" alt="A guided box breathing session" loading="lazy">
-    <img src="/img/sleep.jpg" alt="Last night's sleep against your target" loading="lazy">
-    <img src="/img/demos.jpg" alt="Animated 3D demonstration of a deadlift" loading="lazy">
-    <img src="/img/workouts.jpg" alt="Workouts, each drawn as the shape of its sets" loading="lazy">
-    <img src="/img/fuel.jpg" alt="Fuel screen with calories, protein and energy burned" loading="lazy">
-    <img src="/img/connected.jpg" alt="Check-ins next to training days in Progress" loading="lazy">
+  <div class="apps">
+    <div class="app wellness">
+      <div class="top">
+        <img src="/img/icon.png" alt="MFBP app icon">
+        <div><div class="slogan">Move fast · Be patient</div><h2>MFBP</h2></div>
+      </div>
+      <p>Train, Fuel and Mind in one routine you can keep showing up for. Consistency over intensity: think in years, not days. For iPhone and Apple Watch.</p>
+      <div class="links">
+        <a class="cta" href="/wellness/">Learn more</a>
+        <a href="https://apps.apple.com/app/id6806676902">App Store</a>
+      </div>
+    </div>
+    <div class="app getitdone">
+      <div class="top">
+        <img src="/img/getitdone-icon.png" alt="MFBP Chores app icon">
+        <div><div class="slogan">Move fast · Get it done</div><h2>MFBP Chores</h2></div>
+      </div>
+      <p>The jobs that keep your home running, shared by everyone who lives there. Kids tick theirs off, parents approve, and they earn. Pay once, no subscription.</p>
+      <div class="links">
+        <a class="cta" href="/getitdone/">Learn more</a>
+      </div>
+    </div>
   </div>
 
-  <section>
-    <h2>Think in years, not days</h2>
-    <p class="sub">One big day doesn't change much. Showing up, week after week, changes everything.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>Weeks</h3>
-        <p>Set how many days a week you want to train, and fill the ring as you go. Habits count by the week too, so a missed day never breaks your week.</p>
-      </div>
-      <div class="card">
-        <h3>Months</h3>
-        <p>Your streak calendar, strength curves and personal records show the work adding up. Rest days you plan keep your streak going.</p>
-      </div>
-      <div class="card">
-        <h3>Years</h3>
-        <p>A year view of every day you showed up. That's the number worth watching.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Train, Fuel and Mind</h2>
-    <p class="sub">Progress in one supports the others. MFBP keeps them in one place, on your terms.</p>
-    <div class="grid pillars">
-      <div class="card">
-        <h3>Train</h3>
-        <p>Build any routine your way, or start from a library of hundreds of exercises.</p>
-        <ul>
-          <li>Animated 3D demos for over 500 exercises</li>
-          <li>Runs, walks and rides with GPS and pace</li>
-          <li>Recovery days that count, because rest is part of training</li>
-        </ul>
-      </div>
-      <div class="card fuel">
-        <h3>Fuel</h3>
-        <p>Today's calories and protein from Apple Health, next to how you train.</p>
-        <ul>
-          <li>Goals from your body weight</li>
-          <li>Works with any food app that shares with Health</li>
-          <li>No meal plans, no fad diets</li>
-        </ul>
-      </div>
-      <div class="card mind">
-        <h3>Mind</h3>
-        <p>How you feel, how you sleep and the habits you choose, at your own pace.</p>
-        <ul>
-          <li>One-tap check-ins</li>
-          <li>Sleep, breathing and mindful minutes</li>
-          <li>Habits with targets you set</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="mind-section">
-    <h2>Meet Mind <span class="tag">New</span></h2>
-    <p class="sub">A calmer way to look after the part of health a workout log misses. All of Mind is free.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>Check in</h3>
-        <p>Tap how you're feeling and, if you like, what shaped your day. Over time, see your check-ins next to your training (Pro).</p>
-      </div>
-      <div class="card">
-        <h3>Habits you set</h3>
-        <p>Alcohol-free days, a screens-off wind-down, sleep and mindful minutes, each against a target you choose. Habits count by the week, so a missed day never breaks your week.</p>
-      </div>
-      <div class="card">
-        <h3>Rest is part of the plan</h3>
-        <p>Last night's sleep from Apple Health, or log it yourself if you don't wear a tracker. After a run of training days, Today suggests a rest day, and a rest day you plan keeps your streak going.</p>
-      </div>
-      <div class="card">
-        <h3>Breathe and learn</h3>
-        <p>Guided box breathing, the physiological sigh and 4-7-8, saved to Apple Health as mindful minutes. Short guides on stress, sleep, light and screens, rest and alcohol, each with its sources.</p>
-      </div>
-    </div>
-    <p class="note">Nothing you log in Mind is ever stored in iCloud. MFBP offers general wellness guidance and isn't a substitute for professional medical or mental health care. Support &amp; Resources is always one tap away in the app.</p>
-  </section>
-
-  <section>
-    <h2>One view of your day</h2>
-    <p class="sub">Your three rings and your streak, with one suggestion for what's next.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>Today at a glance</h3>
-        <p>Train, Fuel and Mind rings beside your streak, and an Up Next pick that weighs your week. Turn rings and cards on or off and put them in the order you like.</p>
-      </div>
-      <div class="card">
-        <h3>On your wrist</h3>
-        <p>Track workouts on Apple Watch with live heart rate and calories, and see your three rings between workouts and right on your watch face (Pro).</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>What MFBP isn't</h2>
-    <div class="nots">
-      <span><b>No</b> fad diets</span>
-      <span><b>No</b> crash workouts</span>
-      <span><b>No</b> guilt over a missed day</span>
-      <span><b>No</b> accounts</span>
-      <span><b>No</b> ads or tracking</span>
-      <span><b>No</b> one else's idea of how you should live</span>
-    </div>
-  </section>
-
-  <div class="closing">
-    <p>Move fast. <span>Be patient.</span></p>
-    <a class="cta" href="https://apps.apple.com/app/id6806676902">Get MFBP on the App Store</a>
+  <div class="nots">
+    <span><b>No</b> accounts</span>
+    <span><b>No</b> ads</span>
+    <span><b>No</b> tracking</span>
+    <span>Your data stays <b>yours</b></span>
   </div>
 
   <footer>
-    <span>MFBP — Move Fast, Be Patient</span>
-    <a href="/support">Support</a>
-    <a href="/privacy">Privacy Policy</a>
+    <span>MFBP</span>
+    <a href="/support/">Support</a>
+    <a href="/wellness/privacy/">Privacy: MFBP</a>
+    <a href="/getitdone/privacy/">Privacy: MFBP Chores</a>
   </footer>
 </div>
 </body>
