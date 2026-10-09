@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MFBP Chores — Move Fast, Get It Done</title>
+<meta name="description" content="Family chores and kids allowance for iPhone. Set chores, take turns, and let kids tick theirs off for a parent to approve. Pay once: no subscription, no ads, no accounts.">
+<meta property="og:title" content="MFBP Chores — Move Fast, Get It Done">
+<meta property="og:description" content="Family chores and allowance. Pay once, no subscription.">
+<meta property="og:image" content="https://mfbp.io/img/getitdone-icon.png">
+<!-- When the app is live: add <meta name="apple-itunes-app" content="app-id=…"> and point the CTAs at its App Store link. -->
+<link rel="icon" href="/img/getitdone-icon.png">
+<link rel="apple-touch-icon" href="/img/getitdone-icon.png">
+<style>
+  :root {
+    --bg: #0B1220;
+    --surface: #131B2E;
+    --border: #26324D;
+    --text: #EDEFF4;
+    --text-dim: #9AA5B8;
+    --teal: #2DB898;
+    --teal-bright: #4FD8B6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: radial-gradient(ellipse at 50% 0%, #123A3A 0%, var(--bg) 60%) no-repeat, var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--teal); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero { text-align: center; padding: 72px 0 40px; }
+  .hero img.icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 12px 40px rgba(45,184,152,.3); }
+  .eyebrow {
+    display: inline-block; margin: 28px 0 14px; padding: 6px 16px; border-radius: 999px;
+    background: var(--teal); color: #04241C; font-weight: 700; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase;
+  }
+  h1 {
+    margin: 0; font-size: clamp(2.6rem, 9vw, 4.6rem); line-height: 1.02; font-weight: 900;
+    letter-spacing: -0.01em; text-transform: uppercase;
+  }
+  h1 span { display: block; color: var(--teal-bright); }
+  .lede { max-width: 38em; margin: 22px auto 0; color: #D7DAE3; font-size: 1.12rem; }
+  .cta {
+    display: inline-block; margin-top: 30px; padding: 14px 28px; border-radius: 14px;
+    background: var(--teal); color: #04241C; font-weight: 700; text-decoration: none; font-size: 1.05rem;
+  }
+  .cta.soon { background: transparent; color: var(--teal-bright); border: 2px solid var(--teal); }
+  .fine { color: var(--text-dim); font-size: .9rem; margin-top: 12px; }
+
+  section { padding: 40px 0; }
+  h2 { font-size: 1.6rem; margin: 0 0 10px; text-align: center; }
+  .sub { text-align: center; color: var(--text-dim); max-width: 36em; margin: 0 auto 32px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+  .card h3 { margin: 0 0 6px; color: var(--teal-bright); font-size: 1.05rem; }
+  .card p { margin: 0; color: #D7DAE3; font-size: .98rem; }
+
+  .price { max-width: 40em; margin: 0 auto; text-align: center; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--teal); border-radius: 16px; padding: 28px; }
+  .price p { margin: 0; color: #D7DAE3; }
+  .price p + p { margin-top: 10px; color: var(--text-dim); font-size: .95rem; }
+
+  .nots { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 8px; }
+  .nots span { border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; color: var(--text-dim); font-size: .95rem; }
+  .nots span b { color: var(--text); font-weight: 600; }
+
+  .closing { text-align: center; padding: 48px 0 24px; }
+  .closing p { font-size: 1.3rem; font-weight: 800; text-transform: uppercase; margin: 0; }
+  .closing p span { color: var(--teal-bright); }
+
+  footer {
+    border-top: 1px solid var(--border); margin-top: 40px; padding: 24px 0 48px;
+    color: var(--text-dim); font-size: .9rem; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: center;
+  }
+  footer a { color: var(--text-dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <img class="icon" src="/img/getitdone-icon.png" alt="MFBP Chores app icon">
+    <div><span class="eyebrow">Move Fast · Get It Done</span></div>
+    <h1>Chores, done. <span>Together.</span></h1>
+    <p class="lede">MFBP Chores keeps the whole household on top of the jobs that keep your home running, and makes it easy for kids to pitch in and earn.</p>
+    <span class="cta soon">Coming soon to the App Store</span>
+    <div class="fine">For iPhone. Pay once: every feature, no subscription.</div>
+  </header>
+
+  <section>
+    <h2>See what's due</h2>
+    <p class="sub">One list for the whole home, sorted for you.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Today</h3>
+        <p>What's overdue, what's due and what's done, and what's yours next. Tap the circle to tick one off, with Undo if you tap the wrong one.</p>
+      </div>
+      <div class="card">
+        <h3>Any schedule</h3>
+        <p>Every few days, or on set days, like trash night on Tuesdays and Saturdays. Doing one late doesn't push the next one back.</p>
+      </div>
+      <div class="card">
+        <h3>Take turns</h3>
+        <p>Pick who's in the rotation, and a chore passes to the next person each time it's done.</p>
+      </div>
+      <div class="card">
+        <h3>Rooms</h3>
+        <p>Group chores by room and see at a glance which parts of the home need attention.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Parents and kids</h2>
+    <p class="sub">Parents set the chores and rewards. Kids tick theirs off. A parent approves, and they earn.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Rewards and allowance</h3>
+        <p>Put a value on any chore. The Kids tab shows what's waiting, each kid's last 7 days, and what you owe, with Mark as Paid.</p>
+      </div>
+      <div class="card">
+        <h3>Approve from anywhere</h3>
+        <p>Get a notification when a kid finishes something, and approve it without opening the app.</p>
+      </div>
+      <div class="card">
+        <h3>Jobs up for grabs</h3>
+        <p>Post extras like washing the car. A kid picks one, does it, logs the time with a note, and a parent approves it before it pays.</p>
+      </div>
+      <div class="card">
+        <h3>Missed, not forgotten</h3>
+        <p>A chore not done on its day is missed: it earns nothing and comes back next time instead of piling up. Kids can say they did it; parents decide.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Shared with everyone at home</h2>
+    <p class="sub">Any number of parents and kids, on the same list over iCloud.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Who did what</h3>
+        <p>Activity shows who did what this week, this month or all time, and how often chores get done on time.</p>
+      </div>
+      <div class="card">
+        <h3>Widgets</h3>
+        <p>Home Screen and Lock Screen widgets: tap a chore to finish it without opening the app.</p>
+      </div>
+      <div class="card">
+        <h3>A daily reminder</h3>
+        <p>One notification at the time you choose, with a Done button for each chore that's due.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pay once, get everything</h2>
+    <div class="price">
+      <p>One price unlocks every feature, for good. No subscription, no in-app purchases, no ads.</p>
+      <p>Everyone who uses it on their own iPhone needs the app. With Family Sharing, the people in your Apple family get it with one purchase.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Private by design</h2>
+    <div class="nots">
+      <span><b>No</b> accounts</span>
+      <span><b>No</b> ads</span>
+      <span><b>No</b> tracking</span>
+      <span><b>No</b> subscription</span>
+      <span>Your household stays in <b>your own iCloud</b></span>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p>Move fast. <span>Get it done.</span></p>
+    <span class="cta soon">Coming soon to the App Store</span>
+  </div>
+
+  <footer>
+    <a href="/">MFBP home</a>
+    <a href="/getitdone/support/">Support</a>
+    <a href="/getitdone/privacy/">Privacy Policy</a>
+  </footer>
+</div>
+</body>
+</html>
