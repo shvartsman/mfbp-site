@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>A Thought for Today — MFBP</title>
+<!--
+  Landing page for thoughts shared from MFBP's Mind (My Thoughts › Share › Link).
+  The thought travels in the URL fragment (#payload=…, base64url JSON {v, t, a?, f?}), which
+  browsers never send to the server, so this page decodes it right here in the browser. Nothing
+  is uploaded, stored or tracked, and the page loads no outside resources.
+-->
+<style>
+  :root {
+    --bg: #0A1120;
+    --surface: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.10);
+    --text: #FFFFFF;
+    --text-dim: #93A0BA;
+    --gold: #D99A3C;
+    --gold-ink: #1B1203;
+    --mind: #F2A6C8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle 620px at 50% -120px, #223559, var(--bg));
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  .eyebrow {
+    color: var(--mind);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 24px;
+    margin: 0 0 28px;
+  }
+  blockquote {
+    margin: 0;
+    font-family: "New York", ui-serif, Georgia, serif;
+    font-style: italic;
+    font-size: 1.65rem;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+  .byline { color: var(--text-dim); margin: 16px 0 0; }
+  p { color: #D7DAE3; margin: 0 0 14px; }
+  .actions { display: flex; flex-direction: column; gap: 10px; margin: 8px 0 20px; }
+  .button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 14px 18px;
+  }
+  .button.primary { background: var(--gold); color: var(--gold-ink); }
+  .button.secondary { border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+  .button:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+  .fine { color: var(--text-dim); font-size: 0.85rem; }
+  a { color: var(--gold); }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow" id="eyebrow">A thought for today</p>
+  <div class="card">
+    <blockquote id="quote">Someone shared a thought with you from MFBP.</blockquote>
+    <p class="byline" id="byline" hidden></p>
+  </div>
+
+  <div class="actions">
+    <a class="button primary" id="open-app" href="#" hidden>Keep it in MFBP</a>
+    <a class="button secondary" id="get-app" href="https://apps.apple.com/app/id6806676902">Get MFBP on the App Store</a>
+  </div>
+
+  <p class="fine" id="how">Open this link on your iPhone with MFBP installed to keep the thought in My Thoughts.</p>
+  <p class="fine">This thought was read from the link on your device. Nothing was sent to MFBP. <a href="/wellness/privacy/">Privacy policy</a></p>
+
+  <footer>MFBP — Move Fast, Be Patient</footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var MAX_PAYLOAD = 2000;   // the app ignores links longer than this
+
+  function readPayload() {
+    var hash = window.location.hash || "";
+    var prefix = "#payload=";
+    if (hash.indexOf(prefix) !== 0) return null;
+    var payload = hash.slice(prefix.length);
+    if (!payload || payload.length > MAX_PAYLOAD || !/^[A-Za-z0-9_-]+$/.test(payload)) return null;
+    return payload;
+  }
+
+  function decode(payload) {
+    try {
+      var base64 = payload.replace(/-/g, "+").replace(/_/g, "/");
+      while (base64.length % 4) base64 += "=";
+      var binary = atob(base64);
+      var bytes = new Uint8Array(binary.length);
+      for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+      var thought = JSON.parse(new TextDecoder("utf-8").decode(bytes));
+      return thought && typeof thought === "object" && typeof thought.t === "string" ? thought : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // Mirrors MindOwnThoughts.cleaned in the app: collapse whitespace, cap the length.
+  function text(value, max) {
+    return typeof value === "string" ? value.replace(/\s+/g, " ").trim().slice(0, max) : "";
+  }
+
+  var payload = readPayload();
+  var thought = payload ? decode(payload) : null;
+  if (!thought) return;
+
+  var words = text(thought.t, 200);
+  if (!words) return;
+  var author = text(thought.a, 60);
+  var from = text(thought.f, 40);
+
+  document.getElementById("quote").textContent = "“" + words + "”";
+  var byline = author || from;
+  if (byline) {
+    var line = document.getElementById("byline");
+    line.textContent = "— " + byline;
+    line.hidden = false;
+  }
+  if (from) {
+    document.getElementById("eyebrow").textContent = from + " shared a thought";
+    document.title = from + " shared a thought — MFBP";
+  }
+
+  // On iPhone or iPad, MFBP's own URL scheme hands the thought straight to the app, which asks
+  // before keeping it. The words stay on the device.
+  var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  if (isIOS) {
+    var open = document.getElementById("open-app");
+    open.href = "mfbp://thought?payload=" + payload;
+    open.hidden = false;
+    document.getElementById("how").textContent =
+      "Already have MFBP? Tap Keep it in MFBP to add it to My Thoughts.";
+  }
+})();
+</script>
+</body>
+</html>
