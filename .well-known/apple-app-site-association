@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["96FSCJ84H4.com.mfbp.ExerciseApp"],
+        "components": [
+          { "/": "/grove/", "comment": "Grove invites: MFBP 3.5.2 and later open these itself." }
+        ]
+      }
+    ]
+  }
+}
